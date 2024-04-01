@@ -14,8 +14,7 @@ Now that your repository is set up on GitHub and contains your React app's initi
    ```bash
    git clone https://github.com/MazRadwan/FinalSprintPCJS.git
    ```
-   Make sure to replace `https://github.com/your-username/your-repository-name.git` with the actual URL of your GitHub repository.
-
+  
 2. **Navigate into the Repository Directory**: After cloning, they should navigate into the newly created directory, which is named after your repository:
    ```bash
    cd your-repository-name
