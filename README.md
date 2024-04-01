@@ -12,7 +12,7 @@ Now that your repository is set up on GitHub and contains your React app's initi
 
 1. **Clone the Repository**: First, they'll need to clone the repository to their local machine. They can do this by opening their terminal (or command prompt/PowerShell) and running the following command:
    ```bash
-   git clone [https://github.com/[MazRadwan/FinalSprintPCJS.git](https://github.com/MazRadwan/FinalSprintPCJS.git)
+   git clone https://github.com/MazRadwan/FinalSprintPCJS.git
    ```
    Make sure to replace `https://github.com/your-username/your-repository-name.git` with the actual URL of your GitHub repository.
 
