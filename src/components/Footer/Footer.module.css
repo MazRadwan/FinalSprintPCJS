@@ -1,0 +1,82 @@
+/* src/components/Footer/Footer.module.css */
+.footer {
+  background-color: #1d2a39;
+  color: #c7b38b;
+  font-family: "Gowun Batang", serif;
+  padding: 1rem;
+  text-align: center;
+  font-family: "Gowun Batang", serif;
+}
+
+.footerContent {
+  max-width: 1200px; /* or any other max-width you prefer */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.questionSection,
+.socialSection {
+  text-align: left;
+}
+.email {
+  color: #c7b38b;
+  text-decoration: none;
+}
+
+.email:hover,
+.phone:hover,
+.socialLink:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+.socialIcons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  max-width: 150px; /* Adjust size as necessary */
+  margin: 0 20px;
+}
+
+.socialIcons a {
+  color: #c7b38b;
+  font-size: 1.75rem;
+  margin: 0 10px;
+}
+
+.socialIcons a:hover {
+  color: #ffffff;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin: 20px 0;
+  }
+
+  .socialIcons {
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+
+/* Additional styles for copyright */
+.copyright {
+  font-size: 0.75rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .copyright {
+    text-align: center;
+    order: -1; /* Moves copyright info to the top on small screens */
+  }
+}
