@@ -1,0 +1,20 @@
+.quality-assurance {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    justify-content: space-evenly;
+}
+
+.quality-assurance-pledge {
+    flex: 1;
+    color: #BB9F67;
+}
+
+.empty-space {
+    width: 75px;
+}
+
+.quality-assurance-main-box {
+    background-color: #1D2A39;
+}

@@ -8,7 +8,7 @@ function App() {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Objects</title>
-        <link rel="stylesheet" href="FeaturedIn-Module.css" />
+        <link rel="stylesheet" href="FeaturedIn.module.css" />
       </head>
       <body>
         <section>
