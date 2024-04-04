@@ -1,0 +1,67 @@
+/* src/components/Header.css */
+.header {
+  background-color: #1d2a39;
+  color: #c7b38b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* Inherit the text color from the header */
+}
+
+.logo {
+  height: 40px; /* Adjust as necessary */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+.logo-text {
+  font-family: "Gowun Batang", serif;
+  font-size: 1.5rem; /* Adjust as necessary */
+  font-weight: 300;
+}
+
+.cart-icon-container {
+  position: relative;
+}
+
+.fas.fa-shopping-cart {
+  font-size: 1.5rem; /* Adjust as necessary */
+}
+
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  /*display: none;*/ /* Hide by default */
+}
+/* Responsive styling */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .logo-container {
+    margin-bottom: 1rem;
+  }
+
+  .cart-icon-container {
+    position: static;
+  }
+
+  .cart-badge {
+    position: static;
+    display: inline-block; /* Show it inline on smaller screens */
+    display: none;
+  }
+}
