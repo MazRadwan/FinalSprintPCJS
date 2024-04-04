@@ -1,8 +1,7 @@
 // src/components/Footer/Footer.jsx
 import React from "react";
 import styles from "./Footer.module.css";
-import logo from "../../assets/steelandstubbleLogo.png"; // Adjust the path to your logo image
-
+import logo from "../../assets/steelandstubbleLogo.png";
 const Footer = () => {
   return (
     <footer className={styles.footer}>

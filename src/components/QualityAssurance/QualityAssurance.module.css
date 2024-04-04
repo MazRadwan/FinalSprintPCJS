@@ -1,21 +1,70 @@
-.quality-assurance {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    justify-content: space-evenly;
+/* src/components/QualityAssurance/QualityAssurance.module.css */
+.qualityAssuranceContainer {
+  background-color: #1d2a39;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
 }
 
-.quality-assurance-pledge {
-    flex: 1;
-    color: #BB9F67;
-    font-family: "Gowun Batang", serif;
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 70px;
+  max-width: 1200px;
+  width: 100%;
+  color: #bb9f67;
+  font-family: "Gowun Batang", serif;
 }
 
-.empty-space {
-    width: 75px;
+.logoContainer {
+  justify-self: start;
+  margin-left: 50px;
 }
 
-.quality-assurance-main-box {
-    background-color: #1D2A39;
+.logo {
+  max-width: 100%;
+}
+
+.textContent {
+  text-align: left;
+  padding-right: 175px;
+  padding-left: 50px;
+}
+
+.header {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.text {
+  font-size: 1em;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .logoContainer {
+    margin-left: 0;
+    justify-self: center;
+    margin-bottom: 20px;
+  }
+
+  .textContent {
+    padding: 0;
+  }
+
+  .header {
+    font-size: 1.5em;
+  }
+
+  .text {
+    font-size: 0.9em;
+  }
 }

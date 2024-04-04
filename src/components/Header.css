@@ -12,17 +12,17 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: inherit; /* Inherit the text color from the header */
+  color: inherit;
 }
 
 .logo {
-  height: 40px; /* Adjust as necessary */
-  margin-right: 10px; /* Space between logo and text */
+  height: 40px;
+  margin-right: 10px;
 }
 
 .logo-text {
   font-family: "Gowun Batang", serif;
-  font-size: 1.5rem; /* Adjust as necessary */
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .fas.fa-shopping-cart {
-  font-size: 1.5rem; /* Adjust as necessary */
+  font-size: 1.5rem;
 }
 
 .cart-badge {
@@ -45,7 +45,7 @@
   font-size: 0.75rem;
   /*display: none;*/ /* Hide by default */
 }
-/* Responsive styling */
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -61,7 +61,7 @@
 
   .cart-badge {
     position: static;
-    display: inline-block; /* Show it inline on smaller screens */
+    display: inline-block;
     display: none;
   }
 }

@@ -1,33 +1,66 @@
-import React from 'react';
-import './FeaturedIn-Module.css'; // Make sure to import your CSS file
+// src/components/FeaturedIn/FeaturedIn.jsx
+import React, { useEffect, useRef } from "react";
+import styles from "./FeaturedIn.module.css";
+import esquireLogo from "../../assets/Esquire_logo.png";
+import gqLogo from "../../assets/GQ_Logo.png";
+import mensHealthLogo from "../../assets/Mens_Health.png";
 
-function App() {
+const FeaturedIn = () => {
+  // Refs for each logo
+  const esquireRef = useRef(null);
+  const gqRef = useRef(null);
+  const mensHealthRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+          } else {
+            entry.target.classList.remove(styles.visible);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    // Add all logo refs to an array for easier management
+    const logoRefs = [esquireRef, gqRef, mensHealthRef];
+    logoRefs.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    // Cleanup observer on component unmount
+    return () =>
+      logoRefs.forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+  }, []);
+
   return (
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Objects</title>
-        <link rel="stylesheet" href="FeaturedIn.module.css" />
-      </head>
-      <body>
-        <section>
-          <div className="featured-in-section">
-            <h1 style={{ textAlign: 'center', fontSize: '50pt' }}>Featured In</h1>
-            <br />
-            <br />
-            <div className="featured-in-row">
-              <img src="../public/src/Esquire_logo_.svg.png" alt="Esquire" />
-              <img src="../public/src/GQ_Logo.svg.png" alt="GQ" />
-              <img src="../public/src/320px-Men's_Health.svg.png" alt="Men's Health" />
-            </div>
-            <br />
-            <br />
-          </div>
-        </section>
-      </body>
-    </html>
+    <div className={styles.featuredContainer}>
+      <h2 className={styles.header}>Featured In</h2>
+      <div className={styles.logos}>
+        <div className={styles.logoContainer}>
+          <img src={esquireLogo} alt="Esquire Logo" className={styles.logo} />
+        </div>
+        <div className={styles.logoContainer}>
+          <img src={gqLogo} alt="GQ Logo" className={styles.logo} />
+        </div>
+        <div className={styles.logoContainer}>
+          <img
+            src={mensHealthLogo}
+            alt="Men's Health Logo"
+            className={styles.logo}
+          />
+        </div>
+      </div>
+    </div>
   );
-}
-
-export default App;
+};
+export default FeaturedIn;
