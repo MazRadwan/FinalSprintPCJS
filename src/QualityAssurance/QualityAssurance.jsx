@@ -14,7 +14,7 @@ function App() {
         <div className="quality-assurance-main-box">
           <div className="quality-assurance">
             <div className="empty-space"></div>
-            <img src="../../public/assets/steelandstubbleLogo.png" width="432px" height="432px" />
+            <img src="../public/src/steelandstubbleLogo.png" width="432px" height="432px" />
             <div className="quality-assurance-pledge">
               <h1>Steel and Stubble Quality Guarantee</h1>
               <p>

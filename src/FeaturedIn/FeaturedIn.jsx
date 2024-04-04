@@ -17,9 +17,9 @@ function App() {
             <br />
             <br />
             <div className="featured-in-row">
-              <img src="../../public/assets/Esquire_logo_.svg.png" alt="Esquire" />
-              <img src="../../public/assets/GQ_Logo.svg.png" alt="GQ" />
-              <img src="../../public/assets/320px-Men's_Health.svg.png" alt="Men's Health" />
+              <img src="../public/src/Esquire_logo_.svg.png" alt="Esquire" />
+              <img src="../public/src/GQ_Logo.svg.png" alt="GQ" />
+              <img src="../public/src/320px-Men's_Health.svg.png" alt="Men's Health" />
             </div>
             <br />
             <br />

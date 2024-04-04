@@ -4,7 +4,7 @@
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
-    background-color: lightblue;
+    background-color: #DFEFFD;
 }
 
 .featured-in-section {
@@ -13,6 +13,6 @@
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
-    background-color: lightblue;
+    background-color: #DFEFFD;
     font-family: "Gowun Batang", serif;
 }
