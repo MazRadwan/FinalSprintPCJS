@@ -9,7 +9,7 @@
 }
 
 .footerContent {
-  max-width: 1200px; /* or any other max-width you prefer */
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,7 @@
 }
 
 .logo {
-  max-width: 150px; /* Adjust size as necessary */
+  max-width: 150px;
   margin: 0 20px;
 }
 
@@ -77,6 +77,6 @@
 @media (max-width: 768px) {
   .copyright {
     text-align: center;
-    order: -1; /* Moves copyright info to the top on small screens */
+    order: -1;
   }
 }
