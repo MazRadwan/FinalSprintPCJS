@@ -1,0 +1,41 @@
+.btn{
+    background: #D63D0C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .modal2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: right;
+    align-items: right;
+  }
+  
+  .modalContent2 {
+    width: 500px;
+    height: 100%px;
+    background-color: white;
+    padding: 20px;
+    padding-left: 20px;
+    animation-name: modalopen;
+    animation-duration: 0.3s;
+  }
+  @keyframes modalopen{
+    from{
+      top: 100%;
+      opacity: 0;
+    }
+    to{
+      top: 50%;
+      opacity: 1;
+    }
+  }

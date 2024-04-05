@@ -1,0 +1,29 @@
+.productContainer{
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .product{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 50px;
+    width: calc(33.33%-20px);
+    text-align: center;
+  }
+  .btn{
+    background: #D63D0C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+  }
