@@ -58,13 +58,13 @@
   }
 }
 
-@keyframes modalopen {
+@keyframes modalopen{
   from {
-    top: 100%;
+    transform: translateY(100%);
     opacity: 0;
   }
   to {
-    top: 50%;
+    transform: translateY(0);
     opacity: 1;
   }
 }
