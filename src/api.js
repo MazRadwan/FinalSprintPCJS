@@ -1,4 +1,5 @@
 const products = [
+
   {
     id: 1,
     name: "Shave Gel",
@@ -27,6 +28,7 @@ const products = [
       "Experience the luxury of our Ultra-Rich Shave Cream, a premium blend that promises the smoothest shave and unparalleled skin protection. Our unique formula combines the hydrating power of glycerin with the soothing properties of natural extracts, such as aloe vera and almond oil, to create a protective barrier that allows the razor to glide effortlessly across your skin. This rich cream works into a creamy lather, softening your facial hair and making it easier to shave closely without irritation. The result is a visibly smooth finish and skin that feels deeply moisturized and refreshed. Perfect for those who prefer a traditional wet shave, our Ultra-Rich Shave Cream elevates your shaving routine to an indulgent ritual, leaving your skin feeling pampered and impeccably smooth.",
     price: 9.99,
   },
+
 ];
 
 export const getProducts = () => products;

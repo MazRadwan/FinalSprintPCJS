@@ -28,7 +28,7 @@ const ProductList = ({ onProductSelect }) => {
             <br />
             {product.name}
             <br />
-            {product.price}
+            $ {product.price} CAD
             <br />
             <button
               onClick={() => onProductSelect(product)} // Use the prop function to handle modal opening
