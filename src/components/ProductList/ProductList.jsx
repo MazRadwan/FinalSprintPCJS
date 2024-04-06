@@ -12,7 +12,7 @@ const ProductList = ({ onProductSelect }) => {
   // Destructure the passed prop here
   const products = getProducts();
 
-  // You don't need selectedProduct state here anymore
+  // You don't need selectedProduct state here anymore-
 
   return (
     <div className={styles.productContainer}>

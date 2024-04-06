@@ -1,4 +1,4 @@
-/* src/components/Header.css */
+/* Header.module.css */
 .header {
   background-color: #1d2a39;
   color: #c7b38b;
@@ -8,7 +8,7 @@
   padding: 1rem;
 }
 
-.logo-container {
+.logoContainer {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -20,21 +20,22 @@
   margin-right: 10px;
 }
 
-.logo-text {
+.logoText {
   font-family: "Gowun Batang", serif;
   font-size: 1.5rem;
   font-weight: 300;
 }
 
-.cart-icon-container {
+.cartIconContainer {
   position: relative;
 }
 
+/* The FontAwesome icon class is used as-is, no need to convert to camelCase */
 .fas.fa-shopping-cart {
   font-size: 1.5rem;
 }
 
-.cart-badge {
+.cartBadge {
   position: absolute;
   top: -10px;
   right: -10px;
@@ -43,7 +44,6 @@
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 0.75rem;
-  /*display: none;*/ /* Hide by default */
 }
 
 @media (max-width: 768px) {
@@ -51,17 +51,16 @@
     flex-direction: column;
   }
 
-  .logo-container {
+  .logoContainer {
     margin-bottom: 1rem;
   }
 
-  .cart-icon-container {
+  .cartIconContainer {
     position: static;
   }
 
-  .cart-badge {
+  .cartBadge {
     position: static;
     display: inline-block;
-    display: none;
   }
 }

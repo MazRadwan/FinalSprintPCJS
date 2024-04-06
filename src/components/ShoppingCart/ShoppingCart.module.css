@@ -1,41 +1,131 @@
-.btn{
-    background: #D63D0C;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
+/* ShoppingCart.module.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2000;
+}
+
+.modal {
+  background-color: white;
+  width: 30%; /* Or fixed size like 500px */
+  max-width: 500px;
+  height: 100%;
+  overflow-y: auto; /* Make modal scrollable */
+  padding: 20px;
+  position: relative; /* For absolute positioning of children */
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure space between logo and close button */
+  background-color: #1d2a39;
+  padding: 10px;
+  width: 100%;
+}
+
+.logo {
+  height: 50px; /* Adjust to your preference */
+  margin-right: 10px;
+}
+
+.companyName {
+  color: #bb9f67;
+  font-family: "Gowun Batang", serif;
+  flex-grow: 1; /* Allow the company name to fill space */
+}
+
+.close {
+  align-self: flex-end;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #bb9f67;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.modalEntering {
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
   }
-  .modal2 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: right;
-    align-items: right;
+  to {
+    transform: translateX(0);
   }
-  
-  .modalContent2 {
-    width: 500px;
-    height: 100%px;
-    background-color: white;
-    padding: 20px;
-    padding-left: 20px;
-    animation-name: modalopen;
-    animation-duration: 0.3s;
+}
+
+/* ShoppingCart.module.css */
+/* ... existing styles ... */
+
+.subtotalSection {
+  /* Styles for the subtotal section */
+  padding: 20px;
+}
+
+.cartActions {
+  /* Styles for the actions section */
+  display: flex;
+  justify-content: space-between; /* Adjust based on design */
+  padding: 20px;
+}
+
+.continueShoppingBtn,
+.checkoutBtn {
+  font-family: "Inter", sans-serif; /* Use the font */
+  font-weight: 600; /* Semi-bold weight */
+  /* ... other styles ... */
+}
+.continueShoppingBtn {
+  background: transparent;
+  border: 2px solid #1e4c81; /* Replace blue with your color code */
+  color: #1e4c81; /* Replace blue with your color code */
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.continueShoppingBtn:hover {
+  background-color: #1e4c81; /* Replace blue with your color code */
+  color: white;
+}
+
+.checkoutBtn {
+  background-color: #1e4c81; /* Replace blue with your color code */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* ... other styles ... */
+
+@media (max-width: 768px) {
+  /* ... responsive styles ... */
+
+  .cartActions {
+    flex-direction: column;
   }
-  @keyframes modalopen{
-    from{
-      top: 100%;
-      opacity: 0;
-    }
-    to{
-      top: 50%;
-      opacity: 1;
-    }
+
+  .continueShoppingBtn,
+  .checkoutBtn {
+    width: 100%; /* Make buttons full width on smaller screens */
+    margin-bottom: 10px; /* Add space between the buttons */
   }
+}
