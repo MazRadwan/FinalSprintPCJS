@@ -1,8 +1,21 @@
-import React from "react";
-import styles from "./Header.module.css"; // Updated import statement
-import logo from "../../assets/steelandstubbleLogo.png"; // Correct the path if necessary
+// Header.jsx
+import React, { useContext } from "react";
+import styles from "./Header.module.css";
+import logo from "../../assets/steelandstubbleLogo.png";
+import { CartContext } from "../../context/CartContext";
 
 const Header = () => {
+  const { cartItems } = useContext(CartContext);
+
+  // Calculate total cart items
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
+  // Conditional style for the cart badge
+  const badgeStyle = totalItems > 0 ? { display: "block" } : {};
+
   return (
     <header className={styles.header}>
       <a href="/" className={styles.logoContainer}>
@@ -11,7 +24,9 @@ const Header = () => {
       </a>
       <div className={styles.cartIconContainer}>
         <i className="fas fa-shopping-cart"></i>
-        <span className={styles.cartBadge}>1</span>
+        <span className={styles.cartBadge} style={badgeStyle}>
+          {totalItems}
+        </span>
       </div>
     </header>
   );

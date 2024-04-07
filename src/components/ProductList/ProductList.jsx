@@ -1,4 +1,4 @@
-import React from "react"; // Now you only need React import
+import React from "react";
 import { getProducts } from "../../api";
 import styles from "./ProductList.module.css";
 import img from "../../assets/SSshavingCream.PNG";
@@ -9,10 +9,7 @@ import img4 from "../../assets/SSshaveGel.PNG";
 const allImgs = [img, img2, img3, img4];
 
 const ProductList = ({ onProductSelect }) => {
-  // Destructure the passed prop here
   const products = getProducts();
-
-  // You don't need selectedProduct state here anymore-
 
   return (
     <div className={styles.productContainer}>
@@ -27,19 +24,17 @@ const ProductList = ({ onProductSelect }) => {
             />
             <br />
             {product.name}
-            <br />
-            $ {product.price} CAD
+            <br />$ {product.price} CAD
             <br />
             <button
-              onClick={() => onProductSelect(product)} // Use the prop function to handle modal opening
+              onClick={() => onProductSelect(product)}
               className={styles.btn}
             >
-              Open Modal
+              SELECT
             </button>
           </div>
         ))}
       </div>
-      {/* Removed ProductDetails rendering */}
     </div>
   );
 };

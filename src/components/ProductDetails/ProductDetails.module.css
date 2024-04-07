@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap");
 .modal {
   position: fixed;
   top: 0;
@@ -20,45 +22,95 @@
   border-radius: 40px;
   animation-name: modalopen;
   animation-duration: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.modalTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1px;
+  margin-top: 40px;
+  font-family: "Gowun Batang", serif;
+  color: #0404049f;
+  font-weight: 600;
+
+  flex-grow: 1;
+}
+
+.titleName {
+  margin-right: 50px;
+}
+
+.titleSeparator {
+  margin-right: 50px;
 }
 
 .close {
-  float: right;
   cursor: pointer;
   color: #888;
-  font-size: 20px;
+  font-size: 30px;
+  margin-right: 20px;
+  margin-bottom: 30px;
 }
 
 .close:hover {
   color: #000;
 }
 
-.viewCartButton {
+.orderNowButton {
   background: #d63d0c;
   color: white;
   border: none;
-  padding: 10px 20px;
-  margin: 5px;
+  padding: 15px 0;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 15px;
+  width: 80%;
+  max-width: 300px;
+  align-self: center;
+  margin-bottom: 70px;
+  transition: background-color 0.3s, font-size 0.3s;
+}
+.orderNowButton:hover {
+  background-color: #86280a;
+  font-size: 16px;
 }
 .modalSlidingOut {
   animation: slideOut 0.3s forwards;
 }
 
+.productDescription {
+  text-align: justify;
+  text-justify: auto;
+  margin: 30px 0;
+  padding: 30px;
+  font-family: Gowun Batang, serif;
+}
+
 @keyframes slideOut {
   from {
-    transform: translateY(0); /* Start at the current position */
-    opacity: 1; /* Fully visible at the start */
+    transform: translateY(0);
+    opacity: 1;
   }
   to {
-    transform: translateY(100%); /* Slide down out of the viewport */
-    opacity: 0; /* Fully transparent at the end */
+    transform: translateY(100%);
+    opacity: 0;
   }
 }
 
-@keyframes modalopen{
+@keyframes modalopen {
   from {
     transform: translateY(100%);
     opacity: 0;

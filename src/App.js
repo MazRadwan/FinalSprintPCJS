@@ -1,13 +1,13 @@
 import React, { useState } from "react";
+
 import Header from "./components/Header/Header";
 import HeroSlider from "./components/HeroSlider/HeroSlider";
 import Footer from "./components/Footer/Footer";
 import FeaturedIn from "./components/FeaturedIn/FeaturedIn";
 import QualityAssurance from "./components/QualityAssurance/QualityAssurance";
-import ProductList from "./components/ProductList/ProductList"; // Import the ProductList component
-import ProductDetails from "./components/ProductDetails/ProductDetails"; // Import the ProductDetails component
-import ShoppingCart from "./components/ShoppingCart/ShoppingCart"; // Import the ShoppingCart component
-import "./App.css";
+import ProductList from "./components/ProductList/ProductList";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import { CartProvider } from "./context/CartContext";
 
 function App() {
@@ -30,12 +30,12 @@ function App() {
   };
 
   const openCart = () => {
-    setIsSlidingOut(true); // Start sliding out animation for ProductDetails
+    setIsSlidingOut(true);
     setTimeout(() => {
-      setIsSlidingOut(false); // Reset the sliding out state
-      setProductDetailsOpen(false); // Close ProductDetails
-      setCartOpen(true); // Open ShoppingCart
-    }, 300); // Match this duration to your slide-out animation duration
+      setIsSlidingOut(false);
+      setProductDetailsOpen(false);
+      setCartOpen(true);
+    }, 300);
   };
 
   return (
