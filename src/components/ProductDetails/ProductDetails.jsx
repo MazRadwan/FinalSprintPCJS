@@ -1,17 +1,15 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../context/CartContext"; // Correct path to CartContext
+import { CartContext } from "../../context/CartContext";
 import styles from "./ProductDetails.module.css";
 
 const ProductDetails = ({ product, onClose, onOpenCart, isSlidingOut }) => {
   const { addToCart } = useContext(CartContext);
 
-  // Update the function to open the cart after adding the item
   const handleAddToCart = () => {
-    addToCart(product); // Add the product to the cart
-    onOpenCart(); // Open the shopping cart, which will also handle sliding out the modal
+    addToCart(product);
+    onOpenCart();
   };
 
-  // Use the sliding out class if necessary
   const modalClass = isSlidingOut
     ? `${styles.modal} ${styles.modalSlidingOut}`
     : styles.modal;
@@ -19,19 +17,23 @@ const ProductDetails = ({ product, onClose, onOpenCart, isSlidingOut }) => {
   return (
     <div className={modalClass}>
       <div className={styles.modalContent}>
-        <span className={styles.close} onClick={onClose}>
-          &times;
-        </span>
-        <div>
-          {/* Include product name and price details in your design */}
-          <h3>
-            {product.name} | {product.price}
+        <div className={styles.modalHeader}>
+          <h3 className={styles.modalTitle}>
+            <span className={styles.titleName}>{product.name}</span>
+            <span className={styles.titleSeparator}> | </span>
+            <span className={styles.titlePrice}>
+              ${product.price.toFixed(2)} CAD
+            </span>
           </h3>
-          <p>{product.description}</p>
-          <button onClick={handleAddToCart} className={styles.viewCartButton}>
-            Order Now
-          </button>
+
+          <span className={styles.close} onClick={onClose}>
+            &times;
+          </span>
         </div>
+        <p className={styles.productDescription}>{product.description}</p>
+        <button onClick={handleAddToCart} className={styles.orderNowButton}>
+          Order Now
+        </button>
       </div>
     </div>
   );

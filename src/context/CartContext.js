@@ -1,6 +1,5 @@
 import React, { createContext, useState } from "react";
 
-// Create the context-
 export const CartContext = createContext();
 
 // Create a provider component-
@@ -18,7 +17,6 @@ export const CartProvider = ({ children }) => {
         newItems[itemIndex].quantity += 1;
         return newItems;
       } else {
-        // If it's not, add the product with quantity 1
         return [...prevItems, { ...product, quantity: 1 }];
       }
     });
