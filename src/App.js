@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HeroSlider from "./components/HeroSlider/HeroSlider";
 import Footer from "./components/Footer/Footer";
@@ -8,6 +8,8 @@ import QualityAssurance from "./components/QualityAssurance/QualityAssurance";
 import ProductList from "./components/ProductList/ProductList";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import CheckoutPage from "./components/CheckOutPage/CheckOutPage";
+
 import { CartProvider } from "./context/CartContext";
 
 function App() {
@@ -39,24 +41,38 @@ function App() {
   };
 
   return (
-    <CartProvider>
-      <div className="App">
-        <Header />
-        <HeroSlider />
-        <QualityAssurance />
-        <ProductList onProductSelect={openProductDetails} />{" "}
-        {isProductDetailsOpen && (
-          <ProductDetails
-            product={selectedProduct}
-            onClose={closeProductDetails}
-            onOpenCart={openCart}
-            isSlidingOut={isSlidingOut}
-          />
-        )}
-        {isCartOpen && <ShoppingCart onClose={toggleCart} />} <FeaturedIn />
-        <Footer />
-      </div>
-    </CartProvider>
+    <Router>
+      <CartProvider>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <HeroSlider />
+                  <QualityAssurance />
+                  <ProductList onProductSelect={openProductDetails} />
+                  <FeaturedIn />
+                </>
+              }
+            />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            {/* Define other routes as needed */}
+          </Routes>
+          {isProductDetailsOpen && (
+            <ProductDetails
+              product={selectedProduct}
+              onClose={closeProductDetails}
+              onOpenCart={openCart}
+              isSlidingOut={isSlidingOut}
+            />
+          )}
+          {isCartOpen && <ShoppingCart onClose={toggleCart} />}
+          <Footer />
+        </div>
+      </CartProvider>
+    </Router>
   );
 }
 
