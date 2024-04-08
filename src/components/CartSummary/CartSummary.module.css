@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+.cartSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-grow: 0.2;
+}
+
+.subtotal,
+.taxes,
+.shipping {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  color: #6f6c6c;
+  margin-bottom: 10px;
+}
+
+.subtotal,
+.taxes {
+  font-weight: 600;
+}
+
+.estimatedTotal {
+  font-weight: 400;
+  font-size: larger;
+  color: #030b13;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 10px;
+}
+
+.checkoutButton {
+  padding: 15px;
+  background-color: #11539f;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.checkoutButton:hover {
+  background-color: #062e5b;
+}
+
+.continueShopping {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #11539f;
+  font-size: smaller;
+  text-decoration: none;
+  align-self: start;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .checkoutButton {
+    width: auto;
+    align-self: center;
+  }
+  .cartSummary {
+    padding: 20px;
+    min-width: 0;
+    width: 70%;
+    align-self: center;
+  }
+}

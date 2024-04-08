@@ -8,7 +8,9 @@
   padding: 1rem;
 }
 
-.logoContainer {
+.logoContainer,
+.cartIconContainer a {
+  /* Update this line */
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -32,6 +34,12 @@
 
 .fas.fa-shopping-cart {
   font-size: 1.5rem;
+  color: #c7b38b;
+}
+
+/* Add a hover effect for the cart icon */
+.cartIconContainer a:hover .fas.fa-shopping-cart {
+  color: #fff;
 }
 
 .cartBadge {

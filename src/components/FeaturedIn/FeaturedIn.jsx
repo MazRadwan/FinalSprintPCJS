@@ -25,7 +25,6 @@ const FeaturedIn = () => {
       { threshold: 0.5 }
     );
 
-    // Add all logo refs to an array for easier management
     const logoRefs = [esquireRef, gqRef, mensHealthRef];
     logoRefs.forEach((ref) => {
       if (ref.current) {

@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import logo from "../../assets/steelandstubbleLogo.png";
+
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -17,13 +18,28 @@ const Footer = () => {
         <div className={styles.socialSection}>
           <h3>Follow us on Social Media</h3>
           <div className={styles.socialIcons}>
-            <a href="https://facebook.com">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
+            >
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="https://twitter.com">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Twitter"
+            >
               <i className="fab fa-twitter"></i>
             </a>
-            <a href="https://instagram.com">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+            >
               <i className="fab fa-instagram"></i>
             </a>
           </div>
