@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 import styles from "./CartSummary.module.css";
 import { CartContext } from "../../context/CartContext";
 
-const CartSummary = () => {
+const CartSummary = ({ onCheckout, isCheckoutInProgress }) => {
   const { cartItems } = useContext(CartContext);
 
-  // Logic to calculate subtotals and taxes
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
   );
   const taxes = subtotal * 0.15;
+
+  const handleCheckoutClick = () => {
+    onCheckout();
+  };
 
   return (
     <div className={styles.cartSummary}>
@@ -25,13 +28,21 @@ const CartSummary = () => {
       </div>
       <div className={styles.shipping}>
         <span>Shipping:</span>
-        <span>FREE</span>
+        <span>FREEE</span>
       </div>
       <div className={styles.estimatedTotal}>
         <span>Estimated Total:</span>
         <span>${(subtotal + taxes).toFixed(2)}</span>
       </div>
-      <button className={styles.checkoutButton}>CHECKOUT</button>
+      <button
+        className={`${styles.checkoutButton} ${
+          isCheckoutInProgress ? styles.processing : ""
+        }`}
+        onClick={handleCheckoutClick}
+        disabled={isCheckoutInProgress}
+      >
+        {isCheckoutInProgress ? "Processing..." : "CHECKOUT"}
+      </button>
       <Link to="/" className={styles.continueShopping}>
         CONTINUE SHOPPING
       </Link>

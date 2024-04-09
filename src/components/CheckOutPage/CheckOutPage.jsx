@@ -1,41 +1,50 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ListItem from "../ListItem/ListItem";
 import CartSummary from "../CartSummary/CartSummary";
 import styles from "./CheckOutPage.module.css";
+import ConfirmationModal from "../ConfirmationModal/ConfirmationModal";
 
 const CheckOutPage = () => {
   const { cartItems, incrementQuantity, decrementQuantity, removeFromCart } =
     useContext(CartContext);
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  const [isCheckoutInProgress, setIsCheckoutInProgress] = useState(false);
 
   const totalItems = cartItems.reduce(
     (count, item) => count + item.quantity,
     0
   );
 
-  // Calculate the total quantity of items
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
   );
 
   useEffect(() => {
-    // If the total quantity is zero, navigate to the root page
     if (totalQuantity === 0) {
       navigate("/");
     }
   }, [totalQuantity, navigate]);
+
   const handleCheckout = () => {
-    console.log("Proceed to payment or order confirmation");
-    navigate("/confirmation");
+    setIsCheckoutInProgress(true);
+
+    setTimeout(() => {
+      setShowModal(true);
+
+      setTimeout(() => {
+        setShowModal(false);
+        navigate("/");
+      }, 3000);
+    }, 1000);
   };
 
   return (
     <div className={styles.checkoutContainer}>
       <h2 className={styles.cartHeader}>Your Cart ({totalItems})</h2>{" "}
-      {/* Dynamic cart header */}
       <div className={styles.contentWrapper}>
         <div className={styles.listItemsContainer}>
           {cartItems.map((item) => (
@@ -48,7 +57,11 @@ const CheckOutPage = () => {
             />
           ))}
         </div>
-        <CartSummary />
+        <CartSummary
+          onCheckout={handleCheckout}
+          isCheckoutInProgress={isCheckoutInProgress}
+        />
+        {showModal && <ConfirmationModal />}
       </div>
     </div>
   );

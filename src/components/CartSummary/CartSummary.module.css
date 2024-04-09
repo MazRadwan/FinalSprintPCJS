@@ -50,6 +50,10 @@
   background-color: #062e5b;
 }
 
+.processing {
+  background-color: green;
+}
+
 .continueShopping {
   display: block;
   font-family: "Inter", sans-serif;
