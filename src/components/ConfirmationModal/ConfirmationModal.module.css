@@ -1,0 +1,60 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s;
+}
+
+.modalContent {
+  background-color: #1d2a39;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: var(--logo-header-gap, 20px) var(--header-tagline-gap, 30px);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  color: #c7b38b;
+  font-family: "Gowun Batang", serif;
+}
+
+.logoContainer,
+.headerContainer,
+.taglineContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 100px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    padding: 20px;
+  }
+
+  .logo {
+    max-width: 80px;
+  }
+}
