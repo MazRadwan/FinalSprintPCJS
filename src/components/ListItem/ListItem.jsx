@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ListItem.module.css"; // The new CSS module for this component
+import styles from "./ListItem.module.css";
 import shaveGelImage from "../../assets/SSshavingCream.PNG";
 import postShaveBalmImage from "../../assets/SSbalm.PNG";
 import premiumShaverImage from "../../assets/SSBlueRazor.PNG";
