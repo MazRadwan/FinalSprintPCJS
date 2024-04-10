@@ -7,8 +7,9 @@ import styles from "./CheckOutPage.module.css";
 import ConfirmationModal from "../ConfirmationModal/ConfirmationModal";
 
 const CheckOutPage = () => {
-  const { cartItems, incrementQuantity, decrementQuantity, removeFromCart } =
+  const { cartItems, incrementQuantity, decrementQuantity, removeFromCart, clearCart } =
     useContext(CartContext);
+
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [isCheckoutInProgress, setIsCheckoutInProgress] = useState(false);
@@ -37,6 +38,7 @@ const CheckOutPage = () => {
 
       setTimeout(() => {
         setShowModal(false);
+        clearCart();
         navigate("/");
       }, 3000);
     }, 1000);
